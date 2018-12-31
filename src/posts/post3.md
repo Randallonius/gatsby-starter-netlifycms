@@ -2,6 +2,8 @@
 slug: '/third-post'
 date: '2018-12-18'
 title: 'The Third Post'
+featuredImage: ../images/bg.jpeg
+author: 'Jonathan Randall'
 ---
 
 # Third Post

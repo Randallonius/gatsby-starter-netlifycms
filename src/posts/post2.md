@@ -2,6 +2,8 @@
 slug: '/second-post'
 date: '2018-12-17'
 title: 'The Second Post'
+featuredImage: ../images/gatsby-astronaut.png
+author: 'Jonathan Randall'
 ---
 
 # Second Post

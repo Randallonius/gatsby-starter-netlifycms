@@ -3,6 +3,7 @@ module.exports = {
     title: 'Gatsby Starter Blog',
     description: 'Gatsby 2 starter blog with Netlify CMS integration',
     author: 'Jonathan Randall',
+    siteUrl: 'https://compassionate-haibt-85408f.netlify.com/', //Production url
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -11,6 +12,8 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-styled-components`,
     `gatsby-image`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

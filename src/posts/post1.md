@@ -2,6 +2,8 @@
 slug: '/first-post'
 date: '2018-12-16'
 title: 'The First Post'
+featuredImage: ../images/bg.jpeg
+author: 'Jonathan Randall'
 ---
 
 # First Post

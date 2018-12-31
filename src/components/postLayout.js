@@ -28,8 +28,16 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "DD MMMM, YYYY")
         slug
+        author
+        featuredImage {
+          childImageSharp{
+              sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+              }
+          }
+        }
       }
     }
   }

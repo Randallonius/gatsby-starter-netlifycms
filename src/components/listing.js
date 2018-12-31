@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const LISTING_QUERY = graphql`
@@ -12,9 +13,17 @@ const LISTING_QUERY = graphql`
         node {
           excerpt
           frontmatter {
-            date
+            date(formatString: "MMMM DD, YYYY")
             title
             slug
+            author
+            featuredImage {
+              childImageSharp{
+                fluid(maxWidth: 1000) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
           }
         }
       }
@@ -37,7 +46,10 @@ const Post = styled.article`
   h2 {
     margin-bottom: 0;
   }
-  .read-more {
+  .listing-thumbnail {
+    max-width: 300px;
+  }
+  .listing-read-more {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 0.8rem;
     text-decoration: underline;
@@ -54,9 +66,12 @@ const Listing = () => (
           <Link to={`/posts${node.frontmatter.slug}`}>
             <h2>{node.frontmatter.title}</h2>
           </Link>
-          <p>{node.frontmatter.date}</p>
+          <p>{node.frontmatter.author} - {node.frontmatter.date}</p>
+          <div class ="listing-thumbnail">
+            <Img fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+          </div>
           <p>{node.excerpt}</p>
-          <Link class="read-more" to={`/posts${node.frontmatter.slug}`}>Read More</Link>
+          <Link class="listing-read-more" to={`/posts${node.frontmatter.slug}`}>Read More</Link>
         </Post>
       ))
     )}
