@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: master
-  repo: Randallonius/gatsby-starter-netlifycms
+  repo: 
 
 media_folder: src/images
 
