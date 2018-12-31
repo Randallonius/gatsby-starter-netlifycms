@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Starter Blog',
     description: 'Gatsby 2 starter blog with Netlify CMS integration',
-    author: 'Jonathan Randall',
+    author: 'Randallonius',
     siteUrl: 'https://compassionate-haibt-85408f.netlify.com/', //Production url
   },
   plugins: [
